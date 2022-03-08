@@ -2,7 +2,7 @@
   "name": "react-practice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://adolphmagante.github.io/react-practice/",
+  "homepage": "https://github.com/adolphmagante/react-practice.git",
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
