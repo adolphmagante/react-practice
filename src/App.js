@@ -3,24 +3,23 @@ import './App.css';
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import WaysOfStyling from './component/WaysOfStyling';
-import ComponentTutorial from './component/ComponentTutorial';
-import Content1 from './pages/Content1';
+//Components
 import NavBar from './component/NavBar';
+
+//Pages
+import Home from './pages/Home';
+import Content1 from './pages/Content1';
 
 
 function App() {
   return (
     <>
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<NavBar/>}>
-            <Route path="content1" element={<Content1/>}/>
-            <Route path="component" element={<ComponentTutorial/>} />
-            <Route path="waysofstyling" element={<WaysOfStyling/>} />
+            <Route path="/" element={<Home/>}/>
+            <Route path="/content" element={<Content1/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
     </>
   );
 }

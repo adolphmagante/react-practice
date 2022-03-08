@@ -1,34 +1,30 @@
 import React from 'react';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
+
 
 const NavBar = () => {
   return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-                <Link to="/" className="navbar-brand">Navbar</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/content1">
-                            Content1
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/component">Features</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/waysofstyling">
-                            Pricing
-                        </Link>
-                    </li>
-                </ul>
-                </div>
-            </div>
-        </nav>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="offset-lg-9">
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/content">Pricing</Nav.Link>
+                                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                                </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+            </Container>
+        </Navbar>
         <Outlet />
     </>
   )
